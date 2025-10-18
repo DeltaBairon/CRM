@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>CRM - Clientes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/clientes.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>CRM</h1>
+    <a class="logout" href="index.html">Cerrar Sesión</a>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active">Dashboard</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="usuarios.html">Usuarios</a></li>
+        <li><a href="soporte.html">Soporte</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h2>Gestión de Clientes</h2>
+
+      <form id="clienteForm">
+        <input id="idHidden" type="hidden">
+
+        <div class="row">
+          <div class="col">
+            <label>Nombre</label>
+            <input id="nombre" type="text" required
+                   oninput="this.value=this.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñ\s]/g,'')">
+          </div>
+          <div class="col">
+            <label>Apellido</label>
+            <input id="apellido" type="text" required
+                   oninput="this.value=this.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñ\s]/g,'')">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>Documento</label>
+            <input id="documento" type="text">
+          </div>
+          <div class="col">
+            <label>Email</label>
+            <input id="email" type="email" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>Teléfono</label>
+            <input id="telefono" type="tel" pattern="[0-9]{7,15}">
+          </div>
+          <div class="col">
+            <label>Dirección</label>
+            <input id="direccion" type="text">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="submitBtn" type="submit">Guardar</button>
+          <button id="cancelBtn" type="button" style="display:none;">Cancelar</button>
+        </div>
+      </form>
+
+      <section class="list">
+        <h3>Lista de Clientes</h3>
+        <table id="clientesTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Documento</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="clientesTBody"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- JS: asegúrate de que la ruta sea correcta: js/clientes.js -->
+  <script src="js/clientes.js"></script>
+</body>
+</html>

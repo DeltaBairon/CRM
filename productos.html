@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Productos</title>
+  <link rel="stylesheet" href="css/productos.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>CRM - Productos</h1>
+      <a href="index.html" class="logout">Cerrar Sesión</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active">Dashboard</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="usuarios.html">Usuarios</a></li>
+        <li><a href="soporte.html">Soporte</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+      </ul>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="content">
+      <h2>Gestión de Productos</h2>
+
+      <form id="productoForm">
+        <input type="text" id="nombreProducto" placeholder="Nombre del producto" required>
+        <input type="number" id="precioProducto" placeholder="Precio" required>
+        <input type="number" id="stockProducto" placeholder="Stock" required>
+        <button type="submit">Agregar Producto</button>
+      </form>
+
+      <table id="productosTable">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Datos dummies -->
+          <tr>
+            <td>Producto A</td>
+            <td>120</td>
+            <td>50</td>
+            <td>
+              <button class="edit">Editar</button>
+              <button class="delete">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script src="productos.js"></script>
+</body>
+</html>
